@@ -1,0 +1,22 @@
+<h1>Weather forecast</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<p *ngIf="!buttons"><em>Loading...</em></p>
+
+<table class='table' *ngIf="buttons">
+  <thead>
+  <tr>
+    <th>Button</th>
+    <th>Result</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let button of buttons">
+    <td><button class="button" [ngStyle]="{'background-color':button.color}" (click)="lookupColorName(button.color, button.id)" >{{ button.text }}</button></td>
+    <td>{{ button.result }}</td>
+  </tr>
+  </tbody>
+</table>
+
+
